@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
@@ -6,6 +7,7 @@ import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
+import LuckyProfile from './LuckyProfile.jpeg';
 
 const Hero = () => (
   <Background color="bg-gray-100">
@@ -27,10 +29,10 @@ const Hero = () => (
         }
       ></NavbarTwoColumns>
     </Section>
-    <Section>
+    <Section yPadding="py-4">
       {' '}
-      <div>
-        <img alt="Lucky's profile image" src="../LuckyProfile.jpeg" />
+      <div className="flex justify-center">
+        <Image alt="Lucky's profile image" src={LuckyProfile} height="200" />
       </div>
       <div className="flex justify-around md:hidden md:h-0">
         <Link href="/">
@@ -64,7 +66,7 @@ const Hero = () => (
         </Link> */}
       </div>
     </Section>
-    <Section yPadding="pt-20 pb-32">
+    <Section yPadding="pt-4 pb-32">
       <HeroOneButton
         title={
           <>
