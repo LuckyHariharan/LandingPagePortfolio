@@ -31,9 +31,9 @@ const Hero = () => (
     </Section>
     <Section yPadding="py-4">
       {' '}
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <Image alt="Lucky's profile image" src={LuckyProfile} height="200" />
-      </div>
+      </div> */}
       <div className="flex justify-around md:hidden md:h-0">
         <Link href="/">
           <svg
