@@ -19,7 +19,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => (
       <Image
         src={LuckyProfile}
         alt={''}
-        className=" h-1/2 w-1/2 " // Adjust the height as needed
+        className=" h-1/2 w-1/2 md:w-1/4" // Adjust the height as needed
       />
     </div>
     <div className="flex justify-around px-16 md:hidden md:h-0">
