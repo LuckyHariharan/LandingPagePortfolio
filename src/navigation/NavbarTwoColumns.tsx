@@ -11,7 +11,7 @@ type INavbarProps = {
 
 const NavbarTwoColumns = (props: INavbarProps) => (
   <div className="flex justify-between " id="Navbar">
-    <div className="">
+    <div className="hidden md:block">
       <Link href="/">{props.logo}</Link>
     </div>
     <div className="hidden md:mr-4 md:flex md:items-center md:space-x-8 ">
