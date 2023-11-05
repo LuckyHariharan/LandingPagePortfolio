@@ -36,7 +36,7 @@ const Hero = () => (
             <span className="text-primary-500">Software Engineer</span>
           </>
         }
-        description="Hi! My name is Lucky and this is my frontend and android development portfolio."
+        description="Hi! My name is Lucky and this is my software development portfolio."
         button={
           <Link href="#ProjectWork">
             <Button xl>See My Portfolio</Button>

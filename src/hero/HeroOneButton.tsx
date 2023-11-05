@@ -15,11 +15,13 @@ const HeroOneButton = (props: IHeroOneButtonProps) => (
     <h1 className=" text-5xl font-bold leading-hero text-gray-900">
       {props.title}
     </h1>
+    <div className="my-4 text-2xl">{props.description}</div>
+
     <div className="flex justify-center">
       <Image
         src={LuckyProfile}
         alt={''}
-        className=" h-1/2 w-1/2 md:w-1/4" // Adjust the height as needed
+        className=" mb-4 h-1/2 w-1/2 md:w-1/4" // Adjust the height as needed
       />
     </div>
     <div className="flex justify-around px-16 md:hidden md:h-0">
@@ -56,7 +58,6 @@ const HeroOneButton = (props: IHeroOneButtonProps) => (
           />
         </Link> */}
     </div>
-    <div className="mb-16 mt-4 text-2xl">{props.description}</div>
 
     {props.button}
   </header>
