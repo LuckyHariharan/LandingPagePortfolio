@@ -1,31 +1,74 @@
+import { Disclosure } from '@headlessui/react';
+
 import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
 import { Section } from '../layout/Section';
+
+// Define a TypeScript interface for the props
+interface CollapsibleFeatureProps {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  link: string;
+  github: string;
+}
+
+// Define the CollapsibleFeature component with the correct return type
+const CollapsibleFeature: React.FC<CollapsibleFeatureProps> = ({
+  title,
+  description,
+  image,
+  imageAlt,
+  link,
+  github,
+}) => {
+  return (
+    <Disclosure>
+      <VerticalFeatureRow
+        title={title}
+        description={description}
+        image={image}
+        imageAlt={imageAlt}
+        link={link}
+        github={github}
+      />
+    </Disclosure>
+  );
+};
 
 const VerticalFeatures = () => (
   <div id="ProjectWork">
     <Section
+      yPadding="py-8"
       title="Portfolio of Projects"
-      description="See my Android, Frontend and Insurtech Projects here"
+      description="See my Android, Frontend, and Insurtech Projects here"
     >
-      <VerticalFeatureRow
-        title="Insurtech Project"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-        image="/assets/images/feature.svg"
-        imageAlt="First feature alt text"
-      />
-      <VerticalFeatureRow
-        title="React Native App - CRUD APP"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-        image="/assets/images/feature2.svg"
-        imageAlt="Second feature alt text"
-        reverse
-      />
-      <VerticalFeatureRow
-        title="Skillify Personality Quiz"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-        image="/assets/images/feature3.svg"
-        imageAlt="Third feature alt text"
-      />
+      <div className="space-y-8">
+        <CollapsibleFeature
+          title="Actuarial Illustator  Extension"
+          description="Actuarial Illustrator is a chrome extension that calculates policy values for any given age, gender, or smoking status. In V1.03 update users can upload their own actuarial tables for precise policy values."
+          image="/assets/images/background1.png"
+          imageAlt="First feature alt text"
+          link="https://chrome.google.com/webstore/detail/actuarial-present-value/dkpjafmjabacmgmjkogfmepbbkghenll"
+          github="https://github.com/LuckyHariharan/chrome-extension"
+        />
+        <CollapsibleFeature
+          title="Career in Tech Personality Quizzes"
+          description="Take our career in tech personality quiz to find your ideal career path, from a Selection of 12 Careers in tech. Just select  your preferred skills, tasks, and educational background."
+          image="/assets/images/background2.png"
+          imageAlt="Second feature alt text"
+          link="https://skillify.ca/resources/quizzes/careerQuiz"
+          github="https://github.com/skillify-ca/skillify-web/tree/main/pages/resources/quizzes/careerQuiz"
+        />
+        <CollapsibleFeature
+          title="Skillify Android App"
+          description="Developed features for the Skillify Android app including the lesson screen to see all lessons, quizzes and assignments, the bacdges screen to track their progress, and the coaches screen to schedule a coaching call."
+          image="/assets/images/background3.png"
+          imageAlt="Third feature alt text"
+          link="https://github.com/skillify-ca/skillify-android"
+          github="https://github.com/skillify-ca/skillify-android"
+        />
+      </div>
     </Section>
   </div>
 );

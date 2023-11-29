@@ -1,4 +1,6 @@
 import Link from 'next/link';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Link as ScrollLink } from 'react-scroll';
 
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
@@ -9,7 +11,7 @@ import { Logo } from './Logo';
 
 const Hero = () => (
   <Background color="bg-gray-100">
-    <Section yPadding="py-6">
+    <Section yPadding="md:py-0">
       <NavbarTwoColumns
         logo={<Logo xl />}
         // eslint-disable-next-line react/no-children-prop
@@ -28,19 +30,20 @@ const Hero = () => (
       ></NavbarTwoColumns>
     </Section>
 
-    <Section yPadding="py-0">
+    <Section yPadding="py-12">
       <HeroOneButton
         title={
           <>
-            {'Ex Actuarial\n'}
-            <span className="text-primary-500">Software Engineer</span>
+            {'Software Engineer\n'}
+            <br />
+            <span className="text-primary-500">at Skillify</span>
           </>
         }
-        description="Hi! My name is Lucky and this is my software development portfolio."
+        description=""
         button={
-          <Link href="#ProjectWork">
+          <ScrollLink to="ProjectWork" smooth={true} duration={500}>
             <Button xl>See My Portfolio</Button>
-          </Link>
+          </ScrollLink>
         }
       />
     </Section>
