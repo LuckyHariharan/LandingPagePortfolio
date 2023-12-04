@@ -5,15 +5,11 @@ type IFooterIconListProps = {
 };
 
 const FooterIconList = (props: IFooterIconListProps) => (
-  <div className="footer-icon-list flex flex-wrap">
+  <div className="footer-icon-list flex justify-between space-x-12 ">
     {props.children}
 
     <style jsx>
       {`
-        .footer-icon-list :global(a:not(:last-child)) {
-          @apply mr-3;
-        }
-
         .footer-icon-list :global(a) {
           @apply text-gray-500;
         }
@@ -23,7 +19,7 @@ const FooterIconList = (props: IFooterIconListProps) => (
         }
 
         .footer-icon-list :global(svg) {
-          @apply fill-current w-5 h-5;
+          @apply fill-current w-12 h-12;
         }
       `}
     </style>
