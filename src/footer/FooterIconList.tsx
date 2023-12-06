@@ -5,7 +5,7 @@ type IFooterIconListProps = {
 };
 
 const FooterIconList = (props: IFooterIconListProps) => (
-  <div className="footer-icon-list flex justify-between space-x-12 ">
+  <div className="footer-icon-list  border border-black">
     {props.children}
 
     <style jsx>
@@ -19,7 +19,10 @@ const FooterIconList = (props: IFooterIconListProps) => (
         }
 
         .footer-icon-list :global(svg) {
-          @apply fill-current w-12 h-12;
+          @apply fill-current;
+        }
+        .footer-icon-list :global(svg) {
+          @apply flex;
         }
       `}
     </style>

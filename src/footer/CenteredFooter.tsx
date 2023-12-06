@@ -18,7 +18,7 @@ const CenteredFooter = (props: ICenteredFooterProps) => (
       </ul>
     </nav>
 
-    <div className="mt-8 flex justify-center">
+    <div className=" flex justify-center">
       <FooterIconList>{props.iconList}</FooterIconList>
     </div>
 
