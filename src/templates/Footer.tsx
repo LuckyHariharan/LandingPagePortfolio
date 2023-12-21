@@ -10,7 +10,7 @@ const Footer = () => (
       <CenteredFooterAlt
         logo={<Logo xl />}
         iconList={
-          <div className=" md:mr-4 md:flex md:items-center md:space-x-8 ">
+          <div className="  md:mr-4 md:flex md:items-center md:space-x-8">
             <a
               href="https://github.com/LuckyHariharan"
               className=" w-12 transition-transform duration-300 hover:scale-105  "
