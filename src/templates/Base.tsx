@@ -1,5 +1,6 @@
-import { useAnimation } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useLayoutEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
@@ -10,22 +11,27 @@ import { VerticalFeatures } from './VerticalFeatures';
 
 const Base = () => {
   const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
   useLayoutEffect(() => {
-    const scrollToTop = () => {
-      window.scrollTo(0, 0);
-    };
+    if (inView) {
+      const animatePage = async () => {
+        await controls.start({ opacity: 1 });
+      };
 
-    const animatePage = async () => {
-      await controls.start({ opacity: 1, scale: 1 });
-      scrollToTop();
-    };
-
-    animatePage();
-  }, [controls]);
+      animatePage();
+    }
+  }, [inView, controls]);
 
   return (
-    <div className="text-gray-600 antialiased">
+    <motion.div
+      className="text-gray-600 antialiased"
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={controls}
+    >
       <Meta title={AppConfig.title} description={AppConfig.description} />
 
       <Hero />
@@ -34,7 +40,7 @@ const Base = () => {
       <Banner />
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

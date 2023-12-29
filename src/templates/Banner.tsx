@@ -1,21 +1,37 @@
-import Link from 'next/link';
+import { motion, useAnimation } from 'framer-motion';
+import { useLayoutEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 import { Button } from '../button/Button';
 import { CTABanner } from '../cta/CTABanner';
 import { Section } from '../layout/Section';
 
-const Banner = () => (
-  <Section>
-    <CTABanner
-      title="Chat with me!"
-      subtitle="Feel free to use this form to reach out for any business inquiries."
-      button={
-        <Link href="#Navbar">
-          <Button>Back to the Top</Button>
-        </Link>
-      }
-    />
-  </Section>
-);
+const Banner = () => {
+  const controls = useAnimation();
+
+  useLayoutEffect(() => {
+    const animateBanner = async () => {
+      await controls.start({ opacity: 1, y: 0 });
+    };
+
+    animateBanner();
+  }, [controls]);
+
+  return (
+    <motion.div animate={controls}>
+      <Section>
+        <CTABanner
+          title="Contact Me"
+          subtitle="For any business inquiries"
+          button={
+            <ScrollLink to="Navbar" smooth={true} duration={500}>
+              <Button>Back to the Top</Button>
+            </ScrollLink>
+          }
+        />
+      </Section>
+    </motion.div>
+  );
+};
 
 export { Banner };
