@@ -44,6 +44,15 @@ const VerticalFeatures = () => (
       description="See my Android, Frontend, and Insurtech Projects here"
     >
       <div className="space-y-8">
+        {' '}
+        <CollapsibleFeature
+          title="Skillify Android App"
+          description="Developed features for the Skillify Android app including the lesson screen to see all lessons, quizzes and assignments, the bacdges screen to track their progress, and the coaches screen to schedule a coaching call."
+          image="/assets/images/background3.png"
+          imageAlt="Third feature alt text"
+          link="https://github.com/skillify-ca/skillify-android"
+          github="https://github.com/skillify-ca/skillify-android"
+        />
         <CollapsibleFeature
           title="Actuarial Illustator  Extension"
           description="Actuarial Illustrator is a chrome extension that calculates policy values for any given age, gender, or smoking status. In V1.03 update users can upload their own actuarial tables for precise policy values."
@@ -59,14 +68,6 @@ const VerticalFeatures = () => (
           imageAlt="Second feature alt text"
           link="https://skillify.ca/resources/quizzes/careerQuiz"
           github="https://github.com/skillify-ca/skillify-web/tree/main/pages/resources/quizzes/careerQuiz"
-        />
-        <CollapsibleFeature
-          title="Skillify Android App"
-          description="Developed features for the Skillify Android app including the lesson screen to see all lessons, quizzes and assignments, the bacdges screen to track their progress, and the coaches screen to schedule a coaching call."
-          image="/assets/images/background3.png"
-          imageAlt="Third feature alt text"
-          link="https://github.com/skillify-ca/skillify-android"
-          github="https://github.com/skillify-ca/skillify-android"
         />
       </div>
     </Section>
