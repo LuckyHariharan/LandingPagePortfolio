@@ -35,7 +35,7 @@ const NavbarTwoColumns = (props: INavbarProps) => (
       </a>
 
       <a
-        href="https://drive.google.com/file/d/1dPEBmKfvEZWuffhXRhPfQh9iT_D4zs_N/view?usp=sharing"
+        href="https://drive.google.com/file/d/1V4LnDhghUDceTumN9jwEGMliakfXQj9v/view?usp=sharing"
         className=" transition-transform duration-300 hover:scale-105"
       >
         <svg
